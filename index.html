@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Homes</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        #map {
+            height: 100vh;
+            width: 100%;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff; /* increased contrast */
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header a {
+            color: #fff; /* increased contrast */
+            text-decoration: none;
+            margin: 0 10px;
+            padding: 5px;
+        }
+
+        header a:hover {
+            background-color: #555;
+        }
+
+        #login-register {
+            background-color: #4CAF50;
+            color: #fff; /* increased contrast */
+            padding: 5px 10px;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        #login-register:hover {
+            background-color: #45a049;
+        }
+
+       .featured-property {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+       .featured-property img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+        }
+
+       .property-details {
+            margin-left: 20px;
+        }
+
+       .property-details h3 {
+            margin: 0;
+        }
+
+       .property-details p {
+            margin: 5px 0;
+        }
+
+       .inquiry-button {
+            background-color: #4CAF50;
+            color: #fff; /* increased contrast */
+            padding: 5px 10px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+       .inquiry-button:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff; /* increased contrast */
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer label {
+            margin-right: 10px;
+        }
+
+        footer input[type="email"] {
+            width: 300px;
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        footer input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff; /* increased contrast */
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        footer input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#">Home</a>
+        <a href="#">Buy</a>
+        <a href="#">Rent</a>
+        <a href="#">Sell</a>
+        <a href="#">About Us</a>
+        <a id="login-register" href="#">Login/Register</a>
+    </header>
+    <div id="map"></div>
+    <div class="featured-property">
+        <img src="https://via.placeholder.com/200x150" alt="property">
+        <div class="property-details">
+            <h3>Dream House</h3>
+            <p>3 bedrooms, 2 bathrooms</p>
+            <p>$500,000</p>
+        </div>
+        <a href="#" class="inquiry-button">Inquiry</a>
+    </div>
+    <div class="featured-property">
+        <img src="https://via.placeholder.com/200x150" alt="property">
+        <div class="property-details">
+            <h3>Cozy Apartment</h3>
+            <p>1 bedroom, 1 bathroom</p>
+            <p>$250,000</p>
+        </div>
+        <a href="#" class="inquiry-button">Inquiry</a>
+    </div>
+    <footer>
+        <label for="email">Enter your email:</label>
+        <input type="email" id="email" placeholder="Enter your email">
+        <input type="submit" value="Subscribe">
+        <p>© 2022 Dream Homes</p>
+    </footer>
+    <script>
+        // Initialize map
+        var map = L.map('map').setView([37.7749, -122.4194], 13);
+
+        // Add base layer
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Add markers for properties
+        L.marker([37.7749, -122.4194]).addTo(map);
+        L.marker([37.7849, -122.4194]).addTo(map);
+        L.marker([37.7749, -122.4094]).addTo(map);
+
+        // Add advanced search filters
+        // ...
+    </script>
+</body>
+</html>
